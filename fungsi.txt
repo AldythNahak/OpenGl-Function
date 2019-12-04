@@ -1,0 +1,49 @@
+void balok(float x, float y, float z, float panjang, float tinggi, float lebar) {
+	//Depan
+	glBegin(GL_POLYGON);
+	glVertex3f(x, y, z);
+	glVertex3f(x, y + tinggi, z);
+	glVertex3f(x + panjang, y + tinggi, z);
+	glVertex3f(x + panjang, y, z);
+	glEnd();
+
+	//Belakang
+	glBegin(GL_POLYGON);
+	glVertex3f(x, y, z - lebar);
+	glVertex3f(x, y + tinggi, z - lebar);
+	glVertex3f(x + panjang, y + tinggi, z - lebar);
+	glVertex3f(x + panjang, y, z - lebar);
+	glEnd();
+
+	//Atap
+	glBegin(GL_POLYGON);
+	glVertex3f(x, y + tinggi, z);
+	glVertex3f(x + panjang, y + tinggi, z);
+	glVertex3f(x + panjang, y + tinggi, z - lebar);
+	glVertex3f(x, y + tinggi, z - lebar);
+	glEnd();
+
+	//Alas
+	glBegin(GL_POLYGON);
+	glVertex3f(x, y, z);
+	glVertex3f(x + panjang, y, z);
+	glVertex3f(x + panjang, y, z - lebar);
+	glVertex3f(x, y, z - lebar);
+	glEnd();
+
+	//Kiri
+	glBegin(GL_POLYGON);
+	glVertex3f(x, y, z);
+	glVertex3f(x, y + tinggi, z);
+	glVertex3f(x, y + tinggi, z - lebar);
+	glVertex3f(x, y, z - lebar);
+	glEnd();
+
+	//Kanan
+	glBegin(GL_POLYGON);
+	glVertex3f(x + panjang, y, z);
+	glVertex3f(x + panjang, y + tinggi, z);
+	glVertex3f(x + panjang, y + tinggi, z - lebar);
+	glVertex3f(x + panjang, y, z - lebar);
+	glEnd();
+}
